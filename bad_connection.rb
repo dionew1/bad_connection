@@ -6,30 +6,29 @@ The first time you say GOODBYE! they say ANYTHING ELSE I CAN HELP WITH?
 The second time you say GOODBYE! they say THANK YOU FOR CALLING! and the program exits.
 =end
 
-puts "Hello! How may I help you?"
-customer_reply = gets.chomp
+puts "HELLO, THIS IS A GROCERY STORE!"
+$ready_to_quit = false
+$goodbye_count = 0
 
-def customer_service_one (customer_reply)
-  if customer_reply == ""
-    puts "HELLO?!"
-  end
-
-  if customer_reply =~ /[a-z]/
-    puts "I AM HAVING A HARD TIME HEARING YOU."
-  end
-  if customer_reply == customer_reply.uppercase
-    puts "NO, THIS IS NOT A PET STORE"
+def goodbye
+  $goodbye_count += 1
+  if $goodbye_count == 1
+    puts "ANYTHING ELSE I CAN HELP WITH?"
+  else
+    puts "THANK YOU FOR CALLING!"
+    $ready_to_quit = true
   end
 end
 
-def customer_service_two (customer_reply)
-  if customer_reply == "GOODBYE!"
-    goodbyes = []
-    goodbyes << customer_reply
-    if goodbyes.count = 1
-      puts "ANYTHING ELSE I CAN HELP YOU WITH?"
-    else
-      puts "THANK YOU FOR CALLING"
-    end
+until $ready_to_quit
+  input = gets.chomp
+  if input == ""
+    puts "HELLO?!"
+  elsif input =~ /[a-z]/
+    puts "I AM HAVING A HARD TIME HEARING YOU."
+  elsif input == "GOODBYE!"
+    goodbye
+  elsif input == input.upcase
+    puts "NO, THIS IS NOT A PET STORE"
   end
 end
