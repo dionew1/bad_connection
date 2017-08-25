@@ -1,11 +1,3 @@
-=begin
-If you don't input anything (just hit enter) they respond with HELLO?!
-If you ask a question with any lower-case letters, they respond with I AM HAVING A HARD TIME HEARING YOU.
-If you ask a question in all upper-case letters, they respond with NO, THIS IS NOT A PET STORE
-The first time you say GOODBYE! they say ANYTHING ELSE I CAN HELP WITH?
-The second time you say GOODBYE! they say THANK YOU FOR CALLING! and the program exits.
-=end
-
 puts "HELLO, THIS IS A GROCERY STORE!"
 $ready_to_quit = false
 $goodbye_count = 0
